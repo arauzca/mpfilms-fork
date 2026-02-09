@@ -149,7 +149,7 @@ export class App implements AfterViewInit {
         if (src === null || src === '') {
           // Lógica para cargar src solo cuando es visible
         }
-    });
+    };
   }, { threshold: 0.25 });
 
   iframes.forEach(iframe => {
