@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
+import { AfterViewInit, Component, HostListener, signal } from '@angular/core';
 import { PageTexts } from '../interfaces/interfaces';
 
 @Component({
@@ -115,10 +115,12 @@ export class App implements AfterViewInit {
   }
 
   protected changeLanguage(lang: string) {
+    // Cambio de atributo semántico del documento (Vital para SEO/IA)
+    document.documentElement.setAttribute('lang', lang);
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`btn-${lang}`);
     if (activeBtn) activeBtn.classList.add('active');
-
+  
     document.querySelectorAll('[data-i18n]').forEach((el: Element) => {
       const key = el.getAttribute('data-i18n');
       const htmlElement = el as HTMLElement;
@@ -134,6 +136,32 @@ export class App implements AfterViewInit {
     });
 
     localStorage.setItem('lang', lang);
+  }
+  @HostListener("document:DOMContentLoaded")
+  protected onDOMContentLoaded() {
+  const iframes = document.querySelectorAll('iframe');
+  const videoItems = document.querySelectorAll('iframe');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = entry.target;
+        const src = iframe.getAttribute('src');
+        if (src === null || src === '') {
+          // Lógica para cargar src solo cuando es visible
+        }
+    });
+  }, { threshold: 0.25 });
+
+  iframes.forEach(iframe => {
+    // Mover src a data-src para evitar carga inicial pesada
+    const currentSrc = iframe.getAttribute('src');
+    if (currentSrc) {
+      iframe.setAttribute('data-src', currentSrc);
+      iframe.setAttribute('src', '');
+      observer.observe(iframe);
+    }
+    });
+  videoItems.forEach(item => observer.observe(item));
   }
 
   protected acceptCookies() {

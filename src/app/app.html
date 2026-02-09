@@ -1,3 +1,4 @@
+<header class="fixed top-0 w-full z-[100] nav-glass">
 <div class="texture"></div>
 
 <nav class="fixed top-0 w-full z-[100] nav-glass">
@@ -24,7 +25,9 @@
     </div>
   </div>
 </nav>
+</header>
 
+<main>
 <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
   <video autoplay muted loop playsinline
     class="absolute z-0 w-auto min-w-full min-h-full max-w-none opacity-30 grayscale">
@@ -128,65 +131,75 @@
 </section>
 
 <section id="paquetes" class="py-16 md:py-32 bg-zinc-50 relative z-10">
-  <div class="max-w-6xl mx-auto px-6 md:px-8">
-    <div class="text-center mb-16 md:mb-24">
-      <h2 data-i18n="nav_packs" class="serif text-5xl md:text-6xl italic">Paquetes</h2>
-    </div>
+    <div class="max-w-6xl mx-auto px-6 md:px-8">
+      <header class="text-center mb-16 md:mb-24">
+        <h2 data-i18n="nav_packs" class="serif text-5xl md:text-6xl italic">Paquetes</h2>
+      </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-      <div class="p-8 md:p-12 border-2 border-champagne bg-white shadow-2xl flex flex-col h-full">
-        <div class="text-center mb-10">
-          <h3 data-i18n="pack1_name" class="serif text-2xl mb-4 italic">Paquete Base</h3>
-          <div class="text-champagne text-xs tracking-widest border-b border-champagne/20 pb-4 uppercase">CHF 997.-
-          </div>
-        </div>
-        <div class="flex-grow">
-          <p class="font-black text-[10px] uppercase mb-4" data-i18n="pack1_d1">Lo que está incluido</p>
-          <ul class="text-gray-500 text-[10px] tracking-widest space-y-3 uppercase font-normal mb-8">
-            <li data-i18n="pack1_d2">8 Horas de Cobertura</li>
-            <li data-i18n="pack1_d3">Cobertura con dron en 4K (sujeto a clima y permisos)</li>
-            <li data-i18n="pack1_d4">Grabación e integración de voces</li>
-            <li class="font-black text-black pt-2" data-i18n="pack1_d5">Edición</li>
-            <li data-i18n="pack1_d6">Trailer de 60 segundos</li>
-            <li data-i18n="pack1_d7">Instagram Reel</li>
-            <li data-i18n="pack1_d8">6 min. Highlights de la boda</li>
-            <li class="font-black text-black pt-2" data-i18n="pack1_d9">Entrega</li>
-            <li data-i18n="pack1_d10">Highlights de la boda (en el transcurso de 3 meses)</li>
-            <li data-i18n="pack1_d11">Instagram Reel (en el transcurso de 7 días)</li>
-            <li data-i18n="pack1_d12">Trailer (en el transcurso de 72 horas)</li>
-            <li data-i18n="pack1_d13">Entrega en USB</li>
-          </ul>
-        </div>
-        <div class="text-center mt-auto pt-8">
-          <a href="#contact" data-i18n="pack_book"
-            class="text-[10px] tracking-widest border-b border-dark pb-1 hover:bg-champagne transition uppercase">RESERVAR
-            AHORA</a>
-        </div>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <!-- Paquete Base -->
+        <article class="p-8 md:p-12 border-2 border-champagne bg-white shadow-2xl flex flex-col h-full">
+          <header class="text-center mb-10">
+            <h3 data-i18n="pack1_name" class="serif text-2xl mb-4 italic">Paquete Base</h3>
+            <div class="price-container flex flex-col items-center">
+              <span class="price-old text-gray-400 text-xs line-through mb-1">CHF 1240.-</span>
+              <div class="text-champagne text-xl tracking-widest border-b border-champagne/20 pb-4 uppercase font-bold">
+                CHF 992.-
+              </div>
+            </div>
+          </header>
 
-      <div class="p-8 md:p-12 border border-gray-200 bg-white shadow-sm flex flex-col h-full">
-        <div class="text-center mb-10">
-          <h3 data-i18n="pack2_name" class="serif text-2xl mb-4 italic">Extras</h3>
-          <div class="text-gray-400 text-xs tracking-widest border-b border-gray-100 pb-4 uppercase"
-            data-i18n="pack_custom">Personaliza tu experiencia</div>
-        </div>
-        <div class="flex-grow space-y-6">
-          <ul class="text-gray-500 text-[10px] tracking-widest space-y-6 uppercase font-normal">
-            <li data-i18n="pack2_d1">Horas extras de Cobertura CHF 150.-/hora</li>
-            <li data-i18n="pack2_d2">Extra Highlights en la película de la boda CHF 100.-/min</li>
-            <li data-i18n="pack2_d3">Sesión pre-boda CHF 150.-/hora</li>
-            <li data-i18n="pack2_d4" class="italic text-gray-400 normal-case">Consúltanos por paquetes personalizados y
-              ofertas especiales</li>
-          </ul>
-        </div>
-        <div class="text-center mt-auto pt-8">
-          <a href="#contact" data-i18n="pack_btn"
-            class="text-[10px] tracking-widest border-b border-dark pb-1 hover:text-champagne transition uppercase">CONSULTAR</a>
-        </div>
+          <section class="flex-grow">
+            <p class="font-black text-[10px] uppercase mb-4" data-i18n="pack1_d1">Lo que está incluido</p>
+            <ul class="text-gray-500 text-[10px] tracking-widest space-y-3 uppercase font-normal mb-8">
+              <li data-i18n="pack1_d2">8 Horas de Cobertura</li>
+              <li data-i18n="pack1_d3">Cobertura con dron en 4K (sujeto a clima y permisos)</li>
+              <li data-i18n="pack1_d4">Grabación e integración de voces</li>
+              <li class="font-black text-black pt-2" data-i18n="pack1_d5">Edición</li>
+              <li data-i18n="pack1_d6">Trailer de 60 segundos</li>
+              <li data-i18n="pack1_d7">Instagram Reel</li>
+              <li data-i18n="pack1_d8">6 min. Highlights de la boda</li>
+              <li class="font-black text-black pt-2" data-i18n="pack1_d9">Entrega</li>
+              <li data-i18n="pack1_d10">Highlights de la boda (en el transcurso de 3 meses)</li>
+              <li data-i18n="pack1_d11">Instagram Reel (en el transcurso de 7 días)</li>
+              <li data-i18n="pack1_d12">Trailer (en el transcurso de 72 horas)</li>
+              <li data-i18n="pack1_d13">Entrega en USB</li>
+            </ul>
+          </section>
+
+          <footer class="text-center mt-auto pt-8">
+            <a href="#contact" data-i18n="pack_book"
+              class="text-[10px] tracking-widest border-b border-dark pb-1 hover:bg-champagne transition uppercase">RESERVAR
+              AHORA</a>
+          </footer>
+        </article>
+
+        <!-- Extras -->
+        <article class="p-8 md:p-12 border border-gray-200 bg-white shadow-sm flex flex-col h-full">
+          <header class="text-center mb-10">
+            <h3 data-i18n="pack2_name" class="serif text-2xl mb-4 italic">Extras</h3>
+            <div class="text-gray-400 text-xs tracking-widest border-b border-gray-100 pb-4 uppercase"
+              data-i18n="pack_custom">Personaliza tu experiencia</div>
+          </header>
+          
+          <section class="flex-grow space-y-6">
+            <ul class="text-gray-500 text-[10px] tracking-widest space-y-6 uppercase font-normal">
+              <li data-i18n="pack2_d1">Horas extras de Cobertura CHF 150.-/hora</li>
+              <li data-i18n="pack2_d2">Extra Highlights en la película de la boda CHF 100.-/min</li>
+              <li data-i18n="pack2_d3">Sesión pre-boda CHF 150.-/hora</li>
+              <li data-i18n="pack2_d4" class="italic text-gray-400 normal-case">Consúltanos por paquetes personalizados y
+                ofertas especiales</li>
+            </ul>
+          </section>
+
+          <footer class="text-center mt-auto pt-8">
+            <a href="#contact" data-i18n="pack_btn"
+              class="text-[10px] tracking-widest border-b border-dark pb-1 hover:text-champagne transition uppercase">CONSULTAR</a>
+          </footer>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <section id="contact" class="py-20 md:py-32 max-w-4xl mx-auto px-6 md:px-8 text-center relative z-10">
   <h2 data-i18n="nav_contact" class="serif text-5xl md:text-6xl mb-12 md:mb-20 italic">Contacto</h2>
@@ -258,6 +271,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer class="py-12 text-center opacity-30 text-[8px] tracking-[0.6em] uppercase flex flex-col space-y-2 px-6">
   <span>&copy; 2026 MP FILMS</span>
