@@ -25,13 +25,15 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css", "src/app/app.css"],
+            "styles": [
+              "src/styles.css",
+              "src/app/app.css"
+            ],
             "outputPath": "dist",
             "server": "src/main.server.ts",
-            "ssr": false,
-            "prerender": {
-              "routesFile": "routes.txt",
-              "discoverRoutes": false
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
             }
           },
           "configurations": {
