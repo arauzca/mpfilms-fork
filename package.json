@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "github-build": "ng build --configuration production --base-href '/'",
-    "deploy": "ng deploy --base-href=/"
+    "deploy": "ng deploy --base-href=/",
+    "serve:ssr:mpfilms": "node dist/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
@@ -30,7 +31,10 @@
     "@angular/core": "^21.1.0",
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
+    "@angular/platform-server": "^21.1.0",
     "@angular/router": "^21.1.0",
+    "@angular/ssr": "^21.1.3",
+    "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -39,6 +43,8 @@
     "@angular/cli": "^21.1.2",
     "@angular/compiler-cli": "^21.1.0",
     "@tailwindcss/postcss": "^4.1.12",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.19",
     "angular-cli-ghpages": "^3.0.2",
     "jsdom": "^27.1.0",
     "postcss": "^8.5.3",
